@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "baseui": "^8.18.0",
+    "date-fns": "^2.1.0",
     "fusion-cli": "^2.2.0",
     "fusion-core": "^2.0.2",
     "fusion-plugin-react-helmet-async": "^2.0.4",
