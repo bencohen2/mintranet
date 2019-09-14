@@ -25,13 +25,18 @@
     "test": "fusion test",
     "build": "fusion build",
     "build-production": "fusion build --production",
-    "start": "fusion start"
+    "start": "fusion start",
+    "flow": "flow check"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-flow": "^7.0.0",
     "enzyme": "^3.10.0",
     "eslint": "^6.0.1",
     "eslint-config-fusion": "^6.0.1",
-    "eslint-plugin-react-hooks": "^1.6.1"
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "flow-bin": "^0.107.0"
   },
   "files": [
     "dist",

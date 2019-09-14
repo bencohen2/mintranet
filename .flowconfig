@@ -1,0 +1,15 @@
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
+unclear-type
+
+[ignore]
+node_modules/*
+
+[untyped]

@@ -1,8 +1,9 @@
 // @flow
 import {styled} from 'baseui';
+import {StyleConstants} from '../../constants';
 
-export const SideNavContainer = styled('div', props => ({
+export const SideNavContainer = styled<{}>('div', {
     width: '200px',
     height: '100%',
-    boxShadow: `1px 0 0 -0 ${props.$theme.colors.mono200}`
-}));
+    boxShadow: StyleConstants.shadowRight400
+});
