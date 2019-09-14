@@ -5,6 +5,8 @@
   "dependencies": {
     "baseui": "^8.18.0",
     "date-fns": "^2.1.0",
+    "date-fns-tz": "^1.0.7",
+    "formik": "^1.5.8",
     "fusion-cli": "^2.2.0",
     "fusion-core": "^2.0.2",
     "fusion-plugin-react-helmet-async": "^2.0.4",
@@ -16,8 +18,14 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^5.1.0",
+    "recompose": "0.28.2",
+    "reduce-reducers": "^0.1.2",
+    "redux": "^4.0.1",
+    "reselect": "^4.0.0",
     "styletron-engine-atomic": "^1.4.1",
-    "styletron-react": "^5.2.1"
+    "styletron-react": "^5.2.1",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "dev": "fusion dev",
