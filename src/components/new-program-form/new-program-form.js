@@ -10,7 +10,12 @@ import {AttendeesInputContainer} from './styled-components';
 import {Button} from 'baseui/button';
 import {options} from './util';
 
-export const NewProgramForm = () => {
+type Props = {
+    onSubmit: () => void
+}
+
+export const NewProgramForm = (props: Props) => {
+    const {onSubmit} = props;
     return ( 
     <>
         <FormControl label="Program Name"><Input placeholder="Enter a program name"/></FormControl>
@@ -27,7 +32,7 @@ export const NewProgramForm = () => {
                 <AttendeesInputContainer><Input type="number" placeholder="First visit of the year" / ></AttendeesInputContainer>
             </>
         </FormControl>
-        <Button>Save program details</Button>
+        <Button onClick={onSubmit}>Save program details</Button>
     </>
     );
 };

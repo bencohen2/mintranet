@@ -6,5 +6,5 @@ export type ProgramType = {
     description: string,
     submittedPhotos: boolean,
     submittedReceipts: boolean,
-    submittedParticipants: boolean
+    submittedAttendees: boolean
 };

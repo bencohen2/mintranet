@@ -8,7 +8,7 @@ export const Program1: ProgramType = {
     description: 'We will be asking people to bring cans of food to donate to a local food shelter.',
     submittedPhotos: true,
     submittedReceipts: true,
-    submittedParticipants: true
+    submittedAttendees: true
 };
 
 export const Program2: ProgramType = {
@@ -17,7 +17,7 @@ export const Program2: ProgramType = {
     description: "We're closing out summer with a BBQ on our roof; hot dogs and hamburgers, what could be better?",
     submittedPhotos: false,
     submittedReceipts: true,
-    submittedParticipants: true
+    submittedAttendees: true
 };
 
 export const Program3: ProgramType = {
@@ -26,7 +26,7 @@ export const Program3: ProgramType = {
     description: "It's our monthly Shabbat dinner at Moho WV. Shabbat Shalom! (WE ARE Fundraising Shabbat) - Shabbat",
     submittedPhotos: true,
     submittedReceipts: true,
-    submittedParticipants: false
+    submittedAttendees: false
 };
 
 export const Program4: ProgramType = {
@@ -35,7 +35,7 @@ export const Program4: ProgramType = {
     description: "We're back at it with another rooftop happy hour. Come thirsty.",
     submittedPhotos: true,
     submittedReceipts: true,
-    submittedParticipants: true
+    submittedAttendees: true
 };
 
 export const Program5: ProgramType = {
@@ -44,5 +44,5 @@ export const Program5: ProgramType = {
     description: "Come join us for a relaxing night on our roof smoking hookah and hanging with friends.",
     submittedPhotos: true,
     submittedReceipts: true,
-    submittedParticipants: true
+    submittedAttendees: true
 };

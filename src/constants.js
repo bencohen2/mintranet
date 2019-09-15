@@ -7,7 +7,6 @@ export const StyleConstants = {
 export const RoutePaths = {
     Home: '/home',
     Programs: '/programs',
-    NewProgram: '/new-program',
     Receipts: '/receipts',
     NewReceipt: '/new-receipt',
     Budget: '/budget',
