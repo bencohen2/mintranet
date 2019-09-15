@@ -18,35 +18,11 @@ export const BudgetOptions = [
     {id: 15, label: 'International Travel Insurance'},
 ];
 
-export const Fields = {
-    programName: {
-        name: 'programName',
-        errorString: 'Please select a program',
-        required: true
-    },
-    programDate: {
-        name: 'budget',
-        errorString: 'Please select a budget',
-        required: true
-    },
-    amount: {
-        name: 'amount',
-        errorString: 'Please enter the receipt amount',
-        required: true
-    },
-    description: {
-        name: 'description',
-        errorString: 'Please enter a receipt description',
-        required: true
-    },
-    submitter: {
-        name: 'submitter',
-        errorString: 'Please select the receipt submitter',
-        required: true,
-    },
-    purchaser: {
-        name: 'purchaser',
-        errorString: 'Please select the receipt purchaser',
-        required: true,
-    }
+export const FieldErrors = {
+    programName: 'Please select a program',
+    budget: 'Please select a budget',
+    amount: 'Please enter the receipt amount',
+    description: 'Please enter a receipt description',
+    submitter: 'Please select the receipt submitter',
+    purchaser: 'Please select the receipt purchaser',
 };

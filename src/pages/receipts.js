@@ -11,15 +11,15 @@ const ReceiptsList = [Receipt1, Receipt2, Receipt3, Receipt4, Receipt5];
 
 export const Receipts = () => {
     const [creatingNewReceipt, setCreatingNewReceipt] = useState(false);
-    if (creatingNewReceipt) {
+    // if (creatingNewReceipt) {
         return <NewReceiptForm onSubmit={() => setCreatingNewReceipt(false)}/>
-    }
-    return  (
-    <>
-        <Button onClick={() => setCreatingNewReceipt(!creatingNewReceipt)}>New receipt</Button>
-        {/* {ReceiptsList.map(receipt => <ReceiptCard key={receipt.uuid} receipt={receipt} />)} */}
-    </>
-    )
+    // }
+    // return  (
+    // <>
+    //     <Button onClick={() => setCreatingNewReceipt(!creatingNewReceipt)}>New receipt</Button>
+    //     {/* {ReceiptsList.map(receipt => <ReceiptCard key={receipt.uuid} receipt={receipt} />)} */}
+    // </>
+    // )
 }
 
 export default withFormik({

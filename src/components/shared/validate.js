@@ -1,10 +1,6 @@
 // @flow
 export const validate = fields => values => {
     const errors = {};
-    Object.keys(fields).forEach(field => {
-        if (fields[field].required && !values[field]) {
-            errors[field] = fields.field.errorString;
-        }
-    });
+    Object.keys(fields).filter(field => !values[field]).forEach(field => errors[field] = fields[field]);
     return errors;
 }

@@ -1,4 +1,4 @@
 // @flow
-import {Fields} from './util';
+import {FieldErrors} from './util';
 import {validate} from '../shared/validate';
-export default validate(Fields);
+export default validate(FieldErrors);

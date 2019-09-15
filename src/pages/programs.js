@@ -10,7 +10,7 @@ import {getInitialValues, handleSubmit, validate} from '../components/new-progra
 const ProgramsList = [Program1, Program2, Program3, Program4, Program5];
 
 export const Programs = (props) => {
-    const [creatingNewProgram, setCreatingNewProgram] = useState(false);
+    const [creatingNewProgram, setCreatingNewProgram] = useState(false);    
     if (creatingNewProgram) {
         return <NewProgramForm onSubmit={() => setCreatingNewProgram(false)}/>
     }

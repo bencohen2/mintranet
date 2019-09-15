@@ -8,7 +8,7 @@ import {Select} from 'baseui/select';
 import {Checkbox, STYLE_TYPE} from 'baseui/checkbox';
 import {AttendeesInputContainer} from './styled-components';
 import {Button} from 'baseui/button';
-import {Options, Fields} from './util';
+import {Options, CheckboxOverride} from './util';
 import {connect} from 'formik';
 import {Form} from '../shared/styled-components';
 
@@ -19,87 +19,94 @@ type Props = {
 export const NewProgramForm = (props: Props) => {
     const {
         onSubmit, 
-        formik: {values, errors, setFieldValue, handleChange, handleBlur, handleSubmit: handleFormikSubmit}
+        formik: {values, errors, setFieldValue, handleChange, handleBlur, handleSubmit: handleSubmitFormik}
     } = props;
     return ( 
     <Form onSubmit={() => {
-        handleFormikSubmit();
-        // onSubmit();
+        handleSubmitFormik(); 
+        if (Object.keys(errors).length === 0)  {
+            onSubmit();
+        }
     }}>
-        <FormControl label="Program Name">
+        <FormControl label="Program Name" error={errors.programName}>
             <Input 
-                name={Fields.programName.name}
-                id={Fields.programName.name}
+                name="programName"
+                id="programName"
                 placeholder="Enter a program name" 
                 value={values.programName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors[Fields.programName.name]}
+                error={errors.programName}
             />
         </FormControl>
-        <FormControl label="Program Date" caption="Programs cannot be applied for more than 3 months in advance.">
+        <FormControl 
+            label="Program Date" 
+            caption="Programs cannot be applied for more than 3 months in advance."
+            error={errors.programDate}
+        >
             <Datepicker 
-                name={Fields.programDate.name}
-                id={Fields.programDate.name}
+                name="programDate"
+                id="programDate"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 maxDate={addMonths(new Date(), 3)}
                 onChange={newDate => {
-                    setFieldValue(Fields.programDate.name, newDate.date);
+                    setFieldValue("programDate", newDate.date);
                     handleChange();
                 }}
-                error={errors[Fields.programDate.name]}
+                error={errors.programDate}
             />
         </FormControl>
-        <FormControl label="Program Type">
+        <FormControl label="Program Type" error={errors.programType}>
             <Select 
-                name={Fields.programType.name}
-                id={Fields.programType.name}
+                name="programType"
+                id="programType"
                 placeholder="Select"
                 options={Options}
                 value={values.programType}
                 onChange={({value}) => {
-                    setFieldValue(Fields.programType.name, Options.find(o => o.id === value[0].id));
+                    setFieldValue("programType", Options.find(o => o.id === value[0].id));
                     handleChange();
                 }}
                 onBlur={handleBlur}
-                error={errors[Fields.programType.name]}
+                error={errors.programType}
             />
         </FormControl>
-        <FormControl label="Description">
+        <FormControl label="Description" error={errors.description}>
             <Input 
-                name={Fields.description.name}
-                id={Fields.description.name}
+                name="description"
+                id="description"
                 placeholder="Enter a program description"
                 value={values.description}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors[Fields.description.name]}
+                error={errors.description}
             />
         </FormControl>
         <Checkbox 
-            name={Fields.is4HQProgram.name}
-            id={Fields.is4HQProgram.name}
+            name="is4HQProgram"
+            id="is4HQProgram"
             checkmarkType={STYLE_TYPE.toggle} 
             checked={values.is4HQProgram}
-            onChange={newValue => setFieldValue(Fields.is4HQProgram.name, newValue.target.checked)}
+            onChange={newValue => setFieldValue("is4HQProgram", newValue.target.checked)}
             onBlur={handleBlur}
         >
             Is this a 4HQ Israel program?
         </Checkbox>
         <Checkbox 
-            name={Fields.isShabbatProgram.name}
-            id={Fields.isShabbatProgram.name}
+            name="isShabbatProgram"
+            id="isShabbatProgram"
             checkmarkType={STYLE_TYPE.toggle} 
             checked={values.isShabbatProgram}
             onChange={handleChange}
             onBlur={handleBlur}
+            overrides={CheckboxOverride}
         >
             Is this a Shabbat program?
         </Checkbox>
         <Checkbox 
-            name={Fields.isPartnershipProgram.name}
-            id={Fields.isPartnershipProgram.name}
+            name="isPartnershipProgram"
+            id="isPartnershipProgram"
             checkmarkType={STYLE_TYPE.toggle} 
             checked={values.isPartnershipProgram}
             onChange={handleChange}
@@ -107,45 +114,47 @@ export const NewProgramForm = (props: Props) => {
         >
             Is this a partnership prgoram?
         </Checkbox>
-        <FormControl label="Attendees">
-            <>
-                <AttendeesInputContainer>
-                    <Input 
-                        name={Fields.totalAttendees.name}
-                        id={Fields.totalAttendees.name}
-                        type="number" 
-                        placeholder="Total attendees"
-                        value={values.totalAttendees}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        error={errors[Fields.totalAttendees.name]}
-                    />
-                </AttendeesInputContainer>
-                <AttendeesInputContainer>
-                    <Input 
-                        name={Fields.residentAttendees.name}
-                        id={Fields.residentAttendees.name}
-                        type="number" 
-                        placeholder="Resident attendees"
-                        value={values.residentAttendees}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        error={errors[Fields.residentAttendees.name]}
-                    />
-                </AttendeesInputContainer>
-                <AttendeesInputContainer>
-                    <Input 
-                        name={Fields.firstVisitOfYearAttendees.name}
-                        id={Fields.firstVisitOfYearAttendees.name}
-                        type="number" 
-                        placeholder="First visit of the year"
-                        value={values.firstVisitOfYearAttendees}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        error={errors[Fields.firstVisitOfYearAttendees.name]}
-                    />
-                </AttendeesInputContainer>
-            </>
+        <FormControl label="Total attendees" error={errors.totalAttendees}>
+            <AttendeesInputContainer>
+                <Input 
+                    name="totalAttendees"
+                    id="totalAttendees"
+                    type="number" 
+                    placeholder="Total attendees"
+                    value={values.totalAttendees}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.totalAttendees}
+                />
+            </AttendeesInputContainer>
+        </FormControl>
+        <FormControl label="Resident attendees" error={errors.residentAttendees}>
+            <AttendeesInputContainer>
+                <Input 
+                    name="residentAttendees"
+                    id="residentAttendees"
+                    type="number" 
+                    placeholder="Resident attendees"
+                    value={values.residentAttendees}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.residentAttendees}
+                />
+            </AttendeesInputContainer>
+        </FormControl>
+        <FormControl label="First visit of the year" error={errors.firstVisitOfYearAttendees}>
+            <AttendeesInputContainer>
+                <Input 
+                    name="firstVisitOfYearAttendees"
+                    id="firstVisitOfYearAttendees"
+                    type="number" 
+                    placeholder="First visit of the year"
+                    value={values.firstVisitOfYearAttendees}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.firstVisitOfYearAttendees}
+                />
+            </AttendeesInputContainer>
         </FormControl>
         <Button type="submit">
             Save program details

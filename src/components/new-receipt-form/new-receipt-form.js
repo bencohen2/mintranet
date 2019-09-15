@@ -14,71 +14,72 @@ export const NewReceiptForm = (props) => {
         formik: {values, errors, setFieldValue, handleChange, handleBlur, handleSubmit: handleFormikSubmit}
     } = props;
     return (
-    <Form>
-        <FormControl label="Program Name">
+    <Form onSubmit={handleFormikSubmit}>
+        <FormControl label="Program Name" error={errors.programName}>
             <Input 
-                name={Fields.programName.name}
-                id={Fields.programName.name}
+                name="programName"
+                id="programName"
                 placeholder="Enter a program name" 
                 value={values.programName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors[Fields.programName.name]}
+                error={errors.programName}
             />
         </FormControl>
-        <FormControl label="Budget">
+        <FormControl label="Budget" error={errors.budget}>
             <Select 
-                options={BudgetOptions} 
+                options={BudgetOptions}
+                error={errors.budget}
             />
         </FormControl>
-        <FormControl label="Amount">
+        <FormControl label="Amount" error={errors.amount}>
             <Input 
-                name={Fields.amount.name}
-                id={Fields.amount.name}
+                name="amount"
+                id="amount"
                 placeholder="Enter the receipt amount" 
                 value={values.amount}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors[Fields.amount.name]}
+                error={errors.amount}
                 type="number" 
             />
         </FormControl>
-        <FormControl label="Description">
+        <FormControl label="Description" error={errors.description}>
             <Input 
-                name={Fields.description.name}
-                id={Fields.description.name}
+                name="description"
+                id="description"
                 placeholder="Enter a receipt description"
                 value={values.description}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors[Fields.description.name]}
+                error={errors.description}
             />
         </FormControl>
-        <FormControl label="Submitter">
+        <FormControl label="Submitter" error={errors.submitter}>
             <Input
-                name={Fields.submitter.name}
-                id={Fields.submitter.name}
+                name="submitter"
+                id="submitter"
                 placeholder="The submitter" 
                 value={values.submitter}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors[Fields.submitter.name]}
+                error={errors.submitter}
             />
         </FormControl>
-        <FormControl label="Purchaser">
+        <FormControl label="Purchaser" error={errors.purchaser}>
             <Input
-                name={Fields.purchaser.name}
-                id={Fields.purchaser.name}
+                name="purchaser"
+                id="purchaser"
                 placeholder="The purchaser" 
                 value={values.purchaser}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors[Fields.purchaser.name]}
+                error={errors.purchaser}
             />
         </FormControl>
         <FileUploader 
         />
-        <Button>Save receipt</Button>
+        <Button type="submit">Save receipt</Button>
     </Form>
     );
 };
