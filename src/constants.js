@@ -8,7 +8,6 @@ export const RoutePaths = {
     Home: '/home',
     Programs: '/programs',
     Receipts: '/receipts',
-    NewReceipt: '/new-receipt',
     Budget: '/budget',
     Contacts: '/contacts',
     Grants: '/grants',

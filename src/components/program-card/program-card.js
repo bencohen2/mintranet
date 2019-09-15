@@ -22,7 +22,7 @@ export const ProgramCard = (props: Props) => {
     return  (
     <CardContainer>
         <BaseInfoContainer  onClick={() => setIsOpen(!isOpen)}>
-            <Block>{program.eventName}</Block>
+            <Block>{program.programName}</Block>
             <Block marginLeft="auto">{program.createdAt}</Block>
             <Block display="flex">{renderChevron()}</Block>
         </BaseInfoContainer>

@@ -6,10 +6,11 @@ import {Input} from 'baseui/input';
 import {Datepicker} from 'baseui/datepicker';
 import {Select} from 'baseui/select';
 import {Checkbox, STYLE_TYPE} from 'baseui/checkbox';
-import {Form, AttendeesInputContainer} from './styled-components';
+import {AttendeesInputContainer} from './styled-components';
 import {Button} from 'baseui/button';
 import {Options, Fields} from './util';
 import {connect} from 'formik';
+import {Form} from '../shared/styled-components';
 
 type Props = {
     onSubmit: () => void

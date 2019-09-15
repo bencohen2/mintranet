@@ -11,15 +11,15 @@ const ProgramsList = [Program1, Program2, Program3, Program4, Program5];
 
 export const Programs = (props) => {
     const [creatingNewProgram, setCreatingNewProgram] = useState(false);
-    // if (creatingNewProgram) {
+    if (creatingNewProgram) {
         return <NewProgramForm onSubmit={() => setCreatingNewProgram(false)}/>
-    // }
-    // return  (
-    // <>
-    //     <Button onClick={() => setCreatingNewProgram(!creatingNewProgram)}>New program</Button>
-    //     {ProgramsList.map(program => <ProgramCard key={program.uuid} program={program} />)}
-    // </>
-    // )
+    }
+    return  (
+    <>
+        <Button onClick={() => setCreatingNewProgram(!creatingNewProgram)}>New program</Button>
+        {ProgramsList.map(program => <ProgramCard key={program.uuid} program={program} />)}
+    </>
+    )
 }
 
 export default withFormik({

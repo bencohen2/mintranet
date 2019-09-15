@@ -1,6 +1,6 @@
 // @flow
 
-export const budgetOptions = [
+export const BudgetOptions = [
     {id: 1, label: 'House Budget'},
     {id: 2, label: 'EPF Budget'},
     {id: 3, label: 'Special Budget'},
@@ -16,4 +16,37 @@ export const budgetOptions = [
     {id: 13, label: 'Shabbat EPF'},
     {id: 14, label: '4HQ Israel'},
     {id: 15, label: 'International Travel Insurance'},
-]
+];
+
+export const Fields = {
+    programName: {
+        name: 'programName',
+        errorString: 'Please select a program',
+        required: true
+    },
+    programDate: {
+        name: 'budget',
+        errorString: 'Please select a budget',
+        required: true
+    },
+    amount: {
+        name: 'amount',
+        errorString: 'Please enter the receipt amount',
+        required: true
+    },
+    description: {
+        name: 'description',
+        errorString: 'Please enter a receipt description',
+        required: true
+    },
+    submitter: {
+        name: 'submitter',
+        errorString: 'Please select the receipt submitter',
+        required: true,
+    },
+    purchaser: {
+        name: 'purchaser',
+        errorString: 'Please select the receipt purchaser',
+        required: true,
+    }
+};
