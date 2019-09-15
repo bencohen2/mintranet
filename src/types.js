@@ -1,6 +1,7 @@
 // @flow
 
 export type ProgramType = {
+    uuid: string,
     eventName: string,
     createdAt: string,
     description: string,
