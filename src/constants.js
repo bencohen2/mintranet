@@ -13,3 +13,8 @@ export const RoutePaths = {
     Grants: '/grants',
     Resources: '/resources'
 };
+
+export const RpcIds = {
+    getPrograms: 'getPrograms',
+    getReceipts: 'getReceipts'
+}
