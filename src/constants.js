@@ -18,5 +18,6 @@ export const RoutePaths = {
 
 export const RpcIds = {
     getPrograms: 'getPrograms',
-    getReceipts: 'getReceipts'
+    getReceipts: 'getReceipts',
+    getUserInfo: 'getUserInfo'
 }
