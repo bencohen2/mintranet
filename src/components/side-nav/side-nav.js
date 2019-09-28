@@ -1,45 +1,24 @@
 // @flow
 import React from 'react';
 import {Navigation} from 'baseui/side-navigation';
-import {RoutePaths} from '../../constants';
 import {withRouter} from 'fusion-plugin-react-router';
-import {SideNavContainer} from './styled-components';
-
-const items = [
-  {
-    title: 'Home',
-    itemId: RoutePaths.Home
-  },
-  {
-    title: 'Programs',
-    itemId: RoutePaths.Programs
-  },
-  {
-    title: 'Receipts',
-    itemId: RoutePaths.Receipts
-  },
-  {
-    title: 'Budget',
-    itemId: RoutePaths.Budget
-  },
-  {
-    title: 'Contact list',
-    itemId: RoutePaths.Contacts
-  },
-  {
-    title: 'Grants',
-    itemId: RoutePaths.Grants
-  },
-  {
-    title: 'Resource list',
-    itemId: RoutePaths.Resources
-  }
-]
+import {SideNavContainer, HeaderContainer} from './styled-components';
+import {items} from './util';
+import {assetUrl} from 'fusion-core';
+import {connect} from 'react-redux';
+import {compose} from 'redux';
+import {Block }from 'baseui/block';
 
 const SideNav = (props) => {
-  const {location, history} = props;
+  const {location, history, userInfo: {firstName, lastName, houseName}} = props;
   return (
     <SideNavContainer>
+      <HeaderContainer>
+        <Block marginRight="scale200">
+          <img src={assetUrl('../../static/moishe-house-logo.png')} alt="" height="40" width="40"/>
+        </Block>
+        {houseName}
+      </HeaderContainer>
       <Navigation
       items={items}
       activeItemId={location.pathname}
@@ -53,4 +32,13 @@ const SideNav = (props) => {
   );
 }
 
-export default withRouter(SideNav);
+export default compose(
+  withRouter,
+  connect(state => ({
+    userInfo: {
+      firstName: 'Ben',
+      lastName: 'Cohen',
+      houseName: 'West Village'
+    }
+  }))
+)(SideNav);
