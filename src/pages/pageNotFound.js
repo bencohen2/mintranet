@@ -1,11 +1,14 @@
 // @flow
 import React from 'react';
 import {NotFound} from 'fusion-plugin-react-router';
+import {PageContainer} from '../components/shared/styled-components';
 
 const PageNotFound = () => (
-  <NotFound>
-    <div>404</div>
-  </NotFound>
+  <PageContainer>
+    <NotFound>
+      <div>404</div>
+    </NotFound>
+  </PageContainer>
 );
 
 export default PageNotFound;

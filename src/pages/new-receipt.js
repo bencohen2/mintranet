@@ -4,9 +4,10 @@ import {withFormik} from 'formik';
 import {getInitialValues, handleSubmit, validate} from '../components/new-receipt-form';
 import NewReceiptForm from '../components/new-receipt-form/new-receipt-form';
 import {compose} from 'redux';
+import {PageContainer} from '../components/shared/styled-components';
 
 export const Receipts = () => {
-    return <NewReceiptForm/>;
+    return <PageContainer><NewReceiptForm/></PageContainer>;
 }
 
 const withReceipts = compose(

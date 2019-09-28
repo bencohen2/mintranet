@@ -8,15 +8,19 @@ import {connect} from 'react-redux';
 import {compose} from 'redux';
 import {prepared} from 'fusion-react';
 import {withRouter} from 'fusion-plugin-react-router';
+import {PageContainer} from '../components/shared/styled-components';
+import {Block} from 'baseui/block';
 
 export const Programs = (props) => {
     const {programs, history} = props;
     return  (
-    <>
-        <Button onClick={() => history.push(RoutePaths.NewProgram)}>New program</Button>
+    <PageContainer>
+        <Block marginBottom="scale300">
+            <Button onClick={() => history.push(RoutePaths.NewProgram)}>New program</Button>
+        </Block>
         {programs.isLoading && <p>Loading...</p>}
         {programs && programs.programs && programs.programs.map(program => <ProgramCard key={program.uuid} program={program} />)}
-    </>
+    </PageContainer>
     )
 }
 
