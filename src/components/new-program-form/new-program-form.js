@@ -12,22 +12,14 @@ import {Options, CheckboxOverride} from './util';
 import {connect} from 'formik';
 import {Form} from '../shared/styled-components';
 
-type Props = {
-    onSubmit: () => void
-}
+type Props = {};
 
 export const NewProgramForm = (props: Props) => {
     const {
-        onSubmit, 
-        formik: {values, errors, setFieldValue, handleChange, handleBlur, handleSubmit: handleSubmitFormik}
+        formik: {values, errors, setFieldValue, handleChange, handleBlur, handleSubmit}
     } = props;
     return ( 
-    <Form onSubmit={() => {
-        handleSubmitFormik(); 
-        if (Object.keys(errors).length === 0)  {
-            onSubmit();
-        }
-    }}>
+    <Form onSubmit={handleSubmit}>
         <FormControl label="Program Name" error={errors.programName}>
             <Input 
                 name="programName"

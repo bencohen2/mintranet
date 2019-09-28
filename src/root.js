@@ -24,7 +24,9 @@ const root = (
           <Route exact path={'/'} component={Pages.Home} />
           <Route exact path={RoutePaths.Home} component={Pages.Home} />
           <Route exact path={RoutePaths.Programs} component={Pages.Programs} />
+          <Route exact path={RoutePaths.NewProgram} component={Pages.NewProgram} />
           <Route exact path={RoutePaths.Receipts} component={Pages.Receipts} />
+          <Route exact path={RoutePaths.NewReceipt} component={Pages.NewReceipt} />
           <Route exact path={RoutePaths.Budget} component={Pages.Home} />
           <Route exact path={RoutePaths.Contacts} component={Pages.Home} />
           <Route exact path={RoutePaths.Grants} component={Pages.Home} />
