@@ -15,7 +15,7 @@ export const Programs = (props) => {
     const {programs, history} = props;
     return  (
     <PageContainer>
-        <Block marginBottom="scale300">
+        <Block marginBottom="scale300" display="flex" justifyContent="center">
             <Button onClick={() => history.push(RoutePaths.NewProgram)}>New program</Button>
         </Block>
         {programs.isLoading && <p>Loading...</p>}

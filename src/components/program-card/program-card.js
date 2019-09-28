@@ -1,15 +1,11 @@
 // @flow
 import React, {useState} from 'react';
-import {CardContainer, BaseInfoContainer} from './styled-components';
-import {ProgramType} from '../../types';
+import {BaseInfoContainer} from './styled-components';
 import {Toolbar} from './toolbar';
 import {Details} from './details';
 import {Block} from 'baseui/block';
 import {StyledChevronUp, StyledChevronDown} from './styled-components';
-
-type Props = {
-    program: ProgramType
-}
+import {CardContainer} from '../shared/styled-components';
 
 export const ProgramCard = (props: Props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +16,7 @@ export const ProgramCard = (props: Props) => {
     }
 
     return  (
-    <CardContainer>
+    <CardContainer $isOpen={isOpen}>
         <BaseInfoContainer  onClick={() => setIsOpen(!isOpen)}>
             <Block>{program.programName}</Block>
             <Block marginLeft="auto">{program.createdAt}</Block>
