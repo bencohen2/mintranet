@@ -8,9 +8,24 @@ import {assetUrl} from 'fusion-core';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
 import {Block }from 'baseui/block';
+import {RoutePaths} from '../../constants';
 
 const SideNav = (props) => {
   const {location, history, userInfo: {firstName, lastName, houseName}} = props;
+
+  const activePredicate = (item) => {
+    if (item.itemId === location.pathname) {
+      return true;
+    }
+    if (location.pathname === RoutePaths.NewProgram && item.itemId === RoutePaths.Programs) {
+      return true;
+    }
+    if (location.pathname === RoutePaths.NewReceipt && item.itemId === RoutePaths.Receipts) {
+      return true;
+    }
+    return false;
+  }
+
   return (
     <SideNavContainer>
       <HeaderContainer>
@@ -20,13 +35,13 @@ const SideNav = (props) => {
         {houseName}
       </HeaderContainer>
       <Navigation
-      items={items}
-      activeItemId={location.pathname}
-      onChange={({event, item}) => {
-          // prevent page reload
-          event.preventDefault();
-          history.push(item.itemId);
-      }}
+        items={items}
+        onChange={({event, item}) => {
+            // prevent page reload
+            event.preventDefault();
+            history.push(item.itemId);
+        }}
+        activePredicate={activePredicate}
       />
     </SideNavContainer>
   );
