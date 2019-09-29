@@ -30,8 +30,8 @@ const withPrograms = compose(
     connect(state => {
         return {programs: state.programs};
     }),
-    prepared(async ({getPrograms}) => {
-        return getPrograms();
+    prepared(async ({programs, getPrograms}) => {
+        return (!programs || !programs.programs || programs.programs.length === 0) && getPrograms();
     })
 )
 

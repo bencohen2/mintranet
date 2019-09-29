@@ -1,7 +1,7 @@
 // @flow
 import React, {useState} from 'react';
 import {BaseInfoContainer} from './styled-components';
-import {Toolbar} from './toolbar';
+import Toolbar from './toolbar';
 import {Details} from './details';
 import {Block} from 'baseui/block';
 import {StyledChevronUp, StyledChevronDown} from './styled-components';

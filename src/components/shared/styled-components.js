@@ -32,6 +32,7 @@ export const CardContainer = styled('div', props => {
             borderColor: borderFocus
         },
         backgroundColor: mono100,
-        marginBottom: scale200
+        marginBottom: scale200,
+        padding: `0 ${scale200}`
     }
 });
