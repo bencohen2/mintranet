@@ -30,5 +30,12 @@ export const StyledCheck = styled(Check, props => ({
 
 export const StyledDelete = styled(Delete, props => ({
     ...getStylesForChevron(props),
-    color: props.$theme.colors.warning
+    color: props.$theme.colors.negative
 }));
+
+export const DetailDisplayContainer = styled('div', props => ({
+    marginBottom: props.$theme.sizing.scale300,
+    ':last-child': {
+        marginBottom: 0
+    }
+}))

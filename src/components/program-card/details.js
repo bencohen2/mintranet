@@ -2,7 +2,8 @@
 import React from 'react';
 import {ProgramType} from '../../types';
 import {Block} from 'baseui/block';
-import {StyledCheck, StyledDelete} from './styled-components';
+import {StyledCheck, StyledDelete, DetailDisplayContainer} from './styled-components';
+import {styled} from 'baseui';
 
 type Props = {
     program: ProgramType
@@ -11,22 +12,43 @@ type Props = {
 export const Details = (props: Props) => {
     const {program} = props;
     return <>
-        <Block>Description: {program.description}</Block>
-        <BooleanDisplay name="Submitted photos?" value={program.submittedPhotos}/>
-        <BooleanDisplay name="Submitted receipts?" value={program.submittedPhotos}/>
-        <BooleanDisplay name="Submitted attendees?" value={program.submittedPhotos}/>
+        <FieldDisplay name="Description" value={program.description} />
+        <BooleanDisplay name="Photos" value={program.submittedPhotos}/>
+        <BooleanDisplay name="Receipts" value={program.submittedPhotos}/>
+        <BooleanDisplay name="Attendees" value={program.submittedPhotos}/>
     </>;
 };
+
+type FieldDisplayProps = {
+    name: string,
+    value: string
+};
+const FieldDisplay = ({name, value}: FieldDisplayProps) => {
+    return <DetailDisplayContainer><b>{name}: </b>{value}</DetailDisplayContainer>
+    
+}
 
 type BooleanDisplayProps = {
     name: string,
     value: boolean
 }
+const BooleanDisplayContainer = styled('div', props => ({
+    color: props.$value ? props.$theme.colors.mono1000 : props.$theme.colors.negative
+}));
 const BooleanDisplay = ({name, value}: BooleanDisplayProps) => {
+    const renderName = () => {
+        if (value) {
+            return `${name} submitted.`
+        } else {
+            return `${name} not submitted.`
+        }
+    }
     return (
-    <Block display="flex">
-        <Block>{name}</Block>
-        {value ? <StyledCheck/> : <StyledDelete/>}
-    </Block>
+        <DetailDisplayContainer>
+            <Block display="flex" alignItems="center">
+                {value ? <StyledCheck/> : <StyledDelete/>}
+                <BooleanDisplayContainer $value={value}>{renderName()}</BooleanDisplayContainer>
+            </Block>
+        </DetailDisplayContainer>
     );
 }
