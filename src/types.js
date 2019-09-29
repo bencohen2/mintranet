@@ -7,7 +7,6 @@ export type ProgramType = {
     description: string,
     submittedPhotos: boolean,
     submittedReceipts: boolean,
-    submittedAttendees: boolean
 };
 
 export type ReceiptType = {

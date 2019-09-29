@@ -38,4 +38,15 @@ export const DetailDisplayContainer = styled('div', props => ({
     ':last-child': {
         marginBottom: 0
     }
+}));
+
+export const ToolbarButtonContainer = styled('div', props => ({
+    marginRight: props.$theme.sizing.scale300,
+    ':last-child': {
+        marginRight: 0
+    }
+}))
+
+export const DetailsContainer = styled('div', props => ({
+    paddingBottom: props.$theme.sizing.scale300
 }))

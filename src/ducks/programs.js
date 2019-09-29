@@ -5,11 +5,13 @@ import {createAction, handleActions} from 'redux-actions';
 import reduceReducers from 'reduce-reducers';
 
 export const actionTypes = {
-    DeleteProgram: 'DeleteProgram'
+    DeleteProgram: 'DeleteProgram',
+    CreateProgram: 'CreateProgram'
 };
 
 export const actions = {
-    DeleteProgram: createAction(actionTypes.DeleteProgram)
+    DeleteProgram: createAction(actionTypes.DeleteProgram),
+    CreateProgram: createAction(actionTypes.CreateProgram)
 };
 
 export const deleteProgramReducer = handleActions({
@@ -19,6 +21,10 @@ export const deleteProgramReducer = handleActions({
             programs: state.programs.filter(program => action.payload !== program.uuid)
         }
     },
+    [actionTypes.CreateProgram]: (state, action) => {
+        state.programs.unshift(action.payload);
+        return state;
+    }
 }, {});
 
 export const getProgramsReducer = createRPCReducer(
@@ -34,7 +40,7 @@ export const getProgramsReducer = createRPCReducer(
         success: (state, action) => {
             return {
                 isLoading: false,
-                programs: action.payload ? action.payload.programs : [],
+                programs: action.payload ? state.programs.concat(action.payload.programs.filter(program => !state.programs.includes(p => p.uuid === program.uuid))) : [],
                 error: false
             };
         },

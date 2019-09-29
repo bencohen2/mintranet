@@ -2,7 +2,7 @@
 import React from 'react';
 import {ProgramType} from '../../types';
 import {Block} from 'baseui/block';
-import {StyledCheck, StyledDelete, DetailDisplayContainer} from './styled-components';
+import {StyledCheck, StyledDelete, DetailDisplayContainer, DetailsContainer} from './styled-components';
 import {styled} from 'baseui';
 
 type Props = {
@@ -11,12 +11,11 @@ type Props = {
 
 export const Details = (props: Props) => {
     const {program} = props;
-    return <>
+    return <DetailsContainer>
         <FieldDisplay name="Description" value={program.description} />
         <BooleanDisplay name="Photos" value={program.submittedPhotos}/>
-        <BooleanDisplay name="Receipts" value={program.submittedPhotos}/>
-        <BooleanDisplay name="Attendees" value={program.submittedPhotos}/>
-    </>;
+        <BooleanDisplay name="Receipts" value={program.submittedReceipts}/>
+    </DetailsContainer>;
 };
 
 type FieldDisplayProps = {

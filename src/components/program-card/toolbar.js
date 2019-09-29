@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {ProgramType} from '../../types';
-import {ToolbarContainer} from './styled-components';
+import {ToolbarContainer, ToolbarButtonContainer} from './styled-components';
 import {Button, KIND} from 'baseui/button';
 import {Block} from 'baseui/block';
 import {actions} from '../../ducks';
@@ -15,10 +15,11 @@ type Props = {
 export const Toolbar = (props: Props) => {
     const {deleteProgram, program} = props;
     return <ToolbarContainer>
-        <Button kind={KIND.secondary}>Edit program</Button>
-        <Block marginLeft="scale300">
-            <Button onClick={() => deleteProgram(program.uuid)} kind={KIND.secondary}>Delete program</Button>
-        </Block>
+        {program.submittedReceipts && 
+            <ToolbarButtonContainer><Button kind={KIND.secondary}>View receipt</Button></ToolbarButtonContainer>
+        }
+        <ToolbarButtonContainer><Button kind={KIND.secondary}>Edit program</Button></ToolbarButtonContainer>
+        <ToolbarButtonContainer><Button onClick={() => deleteProgram(program.uuid)} kind={KIND.secondary}>Delete program</Button></ToolbarButtonContainer>
     </ToolbarContainer>;
 }
 
