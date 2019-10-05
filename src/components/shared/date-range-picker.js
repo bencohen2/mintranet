@@ -63,7 +63,7 @@ const createOverrides = (value, onClose) => ({
                 },
             },
             placeholder: 'Filter programs',
-            ...(value.length === 0 ? {value: 'Filter programs'}: {})
+            mask: undefined,
         }
     }
 });
