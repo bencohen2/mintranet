@@ -11,6 +11,8 @@ export const Receipt1: ReceiptType = {
     submitter: 'Ben Cohen',
     purchaser: 'Ben Cohen',
     createdAt: '2019-09-16',
+    approved: true,
+    submittedPhotos: false,
 };
 
 export const Receipt2: ReceiptType = {
@@ -22,6 +24,8 @@ export const Receipt2: ReceiptType = {
     submitter: 'Philip Trencher',
     purchaser: 'Philip Trencher',
     createdAt: '2019-09-15',
+    approved: false,
+    submittedPhotos: true,
 };
 
 export const Receipt3: ReceiptType = {
@@ -33,6 +37,8 @@ export const Receipt3: ReceiptType = {
     submitter: 'Daniel Rabban',
     purchaser: 'Daniel Rabban',
     createdAt: '2019-09-13',
+    approved: true,
+    submittedPhotos: true,
 };
 
 export const Receipt4: ReceiptType = {
@@ -44,6 +50,8 @@ export const Receipt4: ReceiptType = {
     submitter: 'Ben Cohen',
     purchaser: 'Philip Trencher',
     createdAt: '2019-09-05',
+    approved: false,
+    submittedPhotos: true,
 };
 
 export const Receipt5: ReceiptType = {
@@ -55,5 +63,7 @@ export const Receipt5: ReceiptType = {
     submitter: 'Daniel Rabban',
     purchaser: 'Philip Trencher',
     createdAt: '2019-09-04',
+    approved: true,
+    submittedPhotos: false,
 };
 

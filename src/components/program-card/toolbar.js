@@ -4,7 +4,6 @@ import React from 'react';
 import {ProgramType} from '../../types';
 import {ToolbarContainer, ToolbarButtonContainer} from './styled-components';
 import {Button, KIND} from 'baseui/button';
-import {Block} from 'baseui/block';
 import {actions} from '../../ducks';
 import {connect} from 'react-redux';
 

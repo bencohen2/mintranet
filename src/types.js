@@ -17,5 +17,7 @@ export type ReceiptType = {
     amount: number,
     description: string,
     submitter: string,
-    purchaser: string
+    purchaser: string,
+    approved: boolean,
+    submittedPhotos: boolean
 }

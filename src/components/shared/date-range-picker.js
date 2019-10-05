@@ -33,7 +33,7 @@ export const DateRangePicker = (props: Props) => {
             }
             setValue(newDates);
         }}
-        overrides={createOverrides(value, onClose)}
+        overrides={createOverrides(value, onClose, placeholder)}
     />
 };
 
@@ -45,7 +45,7 @@ const CloseIcon = styled(Delete, props => ({
     }
 }));
 
-const createOverrides = (value, onClose) => ({
+const createOverrides = (value, onClose, placeholder: string) => ({
     Input: {
         props: {
             overrides: {
@@ -62,7 +62,8 @@ const createOverrides = (value, onClose) => ({
                     }
                 },
             },
-            placeholder: 'Filter programs',
+            placeholder,
+            ...(value.length === 0 ? {value: placeholder}: {}),
             mask: undefined,
         }
     }

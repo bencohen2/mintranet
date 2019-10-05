@@ -2,7 +2,8 @@
 import React from 'react';
 import {ProgramType} from '../../types';
 import {Block} from 'baseui/block';
-import {StyledCheck, StyledDelete, DetailDisplayContainer, DetailsContainer} from './styled-components';
+import {DetailDisplayContainer, DetailsContainer} from './styled-components';
+import {StyledCheck, StyledDelete} from '../shared/styled-components';
 import {styled} from 'baseui';
 
 type Props = {
