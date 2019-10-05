@@ -3,10 +3,6 @@ import {RoutePaths} from '../../constants';
 
 export const items = [
     {
-      title: 'Home',
-      itemId: RoutePaths.Home
-    },
-    {
       title: 'Programs',
       itemId: RoutePaths.Programs
     },

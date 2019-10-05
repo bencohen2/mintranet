@@ -29,8 +29,7 @@ const root = (
       <ContentWrapper>
         <Content>
           <Switch>
-            <Route exact path={'/'} component={Pages.Home} />
-            <Route exact path={RoutePaths.Home} component={Pages.Home} />
+            <Route exact path={'/'} component={Pages.Programs} />
             <Route exact path={RoutePaths.Programs} component={Pages.Programs} />
             <Route exact path={RoutePaths.NewProgram} component={Pages.NewProgram} />
             <Route exact path={RoutePaths.Receipts} component={Pages.Receipts} />

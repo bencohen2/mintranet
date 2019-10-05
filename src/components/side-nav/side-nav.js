@@ -17,9 +17,15 @@ const SideNav = (props) => {
     if (item.itemId === location.pathname) {
       return true;
     }
+    // default page "/" should highlight Programs
+    if (location.pathname === "/" && item.itemId === RoutePaths.Programs) {
+      return true;
+    }
+    // new program page should highlight Programs
     if (location.pathname === RoutePaths.NewProgram && item.itemId === RoutePaths.Programs) {
       return true;
     }
+    // new receipt page should highlight Receipts
     if (location.pathname === RoutePaths.NewReceipt && item.itemId === RoutePaths.Receipts) {
       return true;
     }
