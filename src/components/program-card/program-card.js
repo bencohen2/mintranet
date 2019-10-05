@@ -4,7 +4,7 @@ import {BaseInfoContainer} from './styled-components';
 import Toolbar from './toolbar';
 import {Details} from './details';
 import {Block} from 'baseui/block';
-import {StyledChevronUp, StyledChevronDown} from './styled-components';
+import {StyledChevronUp, StyledChevronDown, SectionContainer} from './styled-components';
 import {CardContainer} from '../shared/styled-components';
 
 export const ProgramCard = (props: Props) => {
@@ -24,8 +24,8 @@ export const ProgramCard = (props: Props) => {
         </BaseInfoContainer>
     {isOpen && 
         <>
-        <Toolbar program={program} />
-        <Details program={program} />
+        <SectionContainer><Toolbar program={program} /></SectionContainer>
+        <SectionContainer><Details program={program} /></SectionContainer>
         </>
     }
     </CardContainer>

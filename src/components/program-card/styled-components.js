@@ -50,3 +50,7 @@ export const ToolbarButtonContainer = styled('div', props => ({
 export const DetailsContainer = styled('div', props => ({
     paddingBottom: props.$theme.sizing.scale300
 }))
+
+export const SectionContainer = styled('div', props => ({
+    marginBottom: props.$theme.sizing.scale200
+}))
