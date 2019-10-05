@@ -5,7 +5,8 @@ import {Helmet} from 'fusion-plugin-react-helmet-async';
 import {RoutePaths} from './constants';
 import * as Pages from './pages';
 import SideNav from './components/side-nav/side-nav';
-import {Content, Container, ContentWrapper} from './styled-components';
+import {Content, Container, ContentWrapper, AccountMenuContainer} from './styled-components';
+import AccountMenu from './components/account-menu/account-menu';
 
 const root = (
   <>
@@ -25,6 +26,9 @@ const root = (
       </style>
     </Helmet>
     <Container>
+      <AccountMenuContainer>
+        <AccountMenu/>
+      </AccountMenuContainer>
       <SideNav />
       <ContentWrapper>
         <Content>

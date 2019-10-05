@@ -17,3 +17,9 @@ export const Content = styled('main', {
     flex: 1,
     overflow: 'auto'
 });
+
+export const AccountMenuContainer = styled('div', props => ({
+    position: 'absolute',
+    top: props.$theme.sizing.scale900,
+    right: props.$theme.sizing.scale900,
+}))
