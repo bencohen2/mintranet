@@ -7,9 +7,11 @@ import * as Pages from './pages';
 import SideNav from './components/side-nav/side-nav';
 import {Content, Container, ContentWrapper, AccountMenuContainer} from './styled-components';
 import AccountMenu from './components/account-menu/account-menu';
+import {ThemeProvider} from 'baseui';
+import {Theme} from './themes';
 
 const root = (
-  <>
+  <ThemeProvider theme={Theme}>
     <Helmet>
       <title>Moishe House Mintranet</title>
       <style>
@@ -47,7 +49,7 @@ const root = (
         </Content>
       </ContentWrapper>
     </Container>
-  </>
+  </ThemeProvider>
 );
 
 export default root;
