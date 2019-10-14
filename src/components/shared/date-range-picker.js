@@ -1,9 +1,10 @@
 // @flow
 import React, {useState} from 'react';
 import {Datepicker} from 'baseui/datepicker';
-import {styled, mergeOverrides} from 'baseui';
+import {styled} from 'baseui';
 import {Block} from 'baseui/block';
 import Delete from 'baseui/icon/delete';
+import {assetUrl} from 'fusion-core';
 
 type Props = {
     placeholder: string,
@@ -61,6 +62,11 @@ const createOverrides = (value, onClose, placeholder: string) => ({
                         </Block> : null;
                     }
                 },
+                Before: {
+                    component: () =>  <Block display="flex" justifyContent="center" alignItems="center" paddingLeft="scale300"> 
+                        <Clock/>
+                    </Block>
+                }
             },
             placeholder,
             ...(value.length === 0 ? {value: placeholder}: {}),
@@ -69,4 +75,5 @@ const createOverrides = (value, onClose, placeholder: string) => ({
     }
 });
 
+const Clock = () => <img src={assetUrl('../../assets/clock.svg')} alt="" height="30px" width="30px" />;
 export default DateRangePicker;
