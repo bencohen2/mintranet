@@ -58,5 +58,6 @@ export const StyledChevronDown = styled<{}>(ChevronDown, getStylesForChevron);
 
 export const PageTitle = styled('div', props => ({
     ...props.$theme.typography.font700,
-    color: props.$theme.colors.mono1000
+    color: props.$theme.colors.mono1000,
+    marginBottom: props.$theme.sizing.scale300
 }))
