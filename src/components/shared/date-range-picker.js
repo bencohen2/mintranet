@@ -64,7 +64,7 @@ const createOverrides = (value, onClose, placeholder: string) => ({
                 },
                 Before: {
                     component: () =>  <Block display="flex" justifyContent="center" alignItems="center" paddingLeft="scale300"> 
-                        <Clock/>
+                        <Calendar/>
                     </Block>
                 }
             },
@@ -75,5 +75,5 @@ const createOverrides = (value, onClose, placeholder: string) => ({
     }
 });
 
-const Clock = () => <img src={assetUrl('../../assets/clock.svg')} alt="" height="30px" width="30px" />;
+const Calendar = () => <img src={assetUrl('../../assets/calendar.svg')} alt="" height="24px" width="24px" />;
 export default DateRangePicker;
