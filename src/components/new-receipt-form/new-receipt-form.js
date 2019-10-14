@@ -77,8 +77,9 @@ export const NewReceiptForm = (props) => {
                 error={errors.purchaser}
             />
         </FormControl>
-        <FileUploader 
-        />
+        <FormControl label="Upload photos">
+            <FileUploader />
+        </FormControl>
         <Button type="submit">Save receipt</Button>
     </Form>
     );

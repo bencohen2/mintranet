@@ -5,7 +5,6 @@ import {ChevronUp, ChevronDown, Check, Delete} from 'baseui/icon';
 const PageContainerWidth = '660px';
 
 export const Form = styled<{}>('form', {
-    width: '500px'
 });
 
 export const PageContainer = styled('div', props => ({
