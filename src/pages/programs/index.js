@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 import {compose} from 'redux';
 import {prepared} from 'fusion-react';
 import {withRouter} from 'fusion-plugin-react-router';
-import {PageContainer} from '../../components/shared/styled-components';
+import {PageContainer, PageTitle} from '../../components/shared/styled-components';
 import {Block} from 'baseui/block';
 import DateRangePicker from '../../components/shared/date-range-picker';
 
@@ -16,6 +16,7 @@ export const Programs = (props) => {
     const {programs, history} = props;
     return  (
     <PageContainer>
+        <PageTitle>Programs</PageTitle>
         <Block marginBottom="scale300" display="flex">
             <DateRangePicker 
                 placeholder="Filter programs" 

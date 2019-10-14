@@ -55,3 +55,8 @@ const getStylesForChevron = props => ({
 
 export const StyledChevronUp = styled<{}>(ChevronUp, getStylesForChevron);
 export const StyledChevronDown = styled<{}>(ChevronDown, getStylesForChevron);
+
+export const PageTitle = styled('div', props => ({
+    ...props.$theme.typography.font700,
+    color: props.$theme.colors.mono1000
+}))

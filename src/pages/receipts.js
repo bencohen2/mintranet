@@ -6,7 +6,7 @@ import {withRPCRedux} from 'fusion-plugin-rpc-redux-react';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
 import {prepared} from 'fusion-react';
-import {PageContainer} from '../components/shared/styled-components';
+import {PageContainer, PageTitle} from '../components/shared/styled-components';
 import {ReceiptCard} from '../components/receipt-card/receipt-card';
 import {type ReceiptType} from '../types';
 import {Block} from 'baseui/block';
@@ -20,6 +20,7 @@ export const Receipts = (props) => {
     const {receipts, history} = props;
     return  (
     <PageContainer>
+        <PageTitle>Receipts</PageTitle>
         <Block marginBottom="scale300" display="flex">
             <DateRangePicker 
                 placeholder="Filter receipts" 
