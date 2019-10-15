@@ -15,3 +15,12 @@ export const HeaderContainer = styled('div', props => ({
     display: 'flex',
     alignItems: 'center'
 }))
+
+export const HouseNameLink = styled('a', props => ({
+    color: props.$theme.colors.mono1000,
+    textDecoration: 'none',
+    ':hover': {
+        cursor: 'pointer',
+        textDecoration: 'underline'
+    }
+}))

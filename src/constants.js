@@ -12,6 +12,8 @@ export const RoutePaths = {
     Budget: '/budget',
     Contacts: '/contacts',
     Grants: '/grants',
+    ApplyForGrant: '/apply-for-grant/:grantID',
+    MakeApplyForGrant: grantID => `/apply-for-grant/${grantID}`,
     Resources: '/resources'
 };
 

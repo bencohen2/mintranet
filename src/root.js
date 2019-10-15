@@ -42,8 +42,9 @@ const root = (
             <Route exact path={RoutePaths.NewReceipt} component={Pages.NewReceipt} />
             <Route exact path={RoutePaths.Budget} component={Pages.Home} />
             <Route exact path={RoutePaths.Contacts} component={Pages.Home} />
-            <Route exact path={RoutePaths.Grants} component={Pages.Home} />
+            <Route exact path={RoutePaths.Grants} component={Pages.Grants} />
             <Route exact path={RoutePaths.Resources} component={Pages.Home} />
+            <Route path={RoutePaths.ApplyForGrant} component={Pages.ApplyForGrant} />
             <Route component={Pages.PageNotFound} />
           </Switch>
         </Content>

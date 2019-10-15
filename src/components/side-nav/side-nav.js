@@ -2,7 +2,7 @@
 import React from 'react';
 import {Navigation} from 'baseui/side-navigation';
 import {withRouter} from 'fusion-plugin-react-router';
-import {SideNavContainer, HeaderContainer} from './styled-components';
+import {SideNavContainer, HeaderContainer, HouseNameLink} from './styled-components';
 import {items} from './util';
 import {assetUrl} from 'fusion-core';
 import {connect} from 'react-redux';
@@ -38,7 +38,7 @@ const SideNav = (props) => {
         <Block marginRight="scale200">
           <img src={assetUrl('../../static/moishe-house-logo.png')} alt="" height="40" width="40"/>
         </Block>
-        {houseName}
+        <HouseNameLink href="https://www.moishehouse.org/find-a-house/nyc-west-village/" target="_blank"> {houseName}</HouseNameLink>
       </HeaderContainer>
       <Navigation
         items={items}
