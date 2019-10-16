@@ -15,12 +15,12 @@ export const items = [
       itemId: RoutePaths.Budget
     },
     {
-      title: 'Contact list',
-      itemId: RoutePaths.Contacts
-    },
-    {
       title: 'Grants',
       itemId: RoutePaths.Grants
+    },
+    {
+      title: 'Contact list',
+      itemId: RoutePaths.Contacts
     },
     {
       title: 'Resource list',
