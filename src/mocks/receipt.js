@@ -58,7 +58,7 @@ export const Receipt5: ReceiptType = {
     uuid: 5,
     programName: 'Hookah on the Roof',
     budget: 'Tikkun Olan Justice Grants',
-    amount: 50.50,
+    amount: 50.51,
     description: 'Hookah and snacks',
     submitter: 'Daniel Rabban',
     purchaser: 'Philip Trencher',

@@ -4,7 +4,7 @@ import {BaseInfoContainer} from './styled-components';
 import Toolbar from './toolbar';
 import {Details} from './details';
 import {Block} from 'baseui/block';
-import {SectionContainer} from './styled-components';
+import {SectionContainer, ReceiptAmountContainer} from './styled-components';
 import {CardContainer, StyledChevronUp, StyledChevronDown} from '../shared/styled-components';
 
 export const ReceiptCard = (props: Props) => {
@@ -18,7 +18,7 @@ export const ReceiptCard = (props: Props) => {
     return  (
     <CardContainer $isOpen={isOpen}>
         <BaseInfoContainer  onClick={() => setIsOpen(!isOpen)}>
-            <Block display="flex">
+            <Block display="flex" justifyContent="center" alignItems="center">
                 <Block marginRight="scale300">
                     {receipt.programName}{':'}
                 </Block>
@@ -26,7 +26,10 @@ export const ReceiptCard = (props: Props) => {
                     {receipt.description}
                 </Block>
             </Block>
-            <Block marginLeft="auto">{receipt.createdAt}</Block>
+            <Block display="flex" marginLeft="auto">
+                <ReceiptAmountContainer >${receipt.amount}</ReceiptAmountContainer>
+                <Block>{receipt.createdAt}</Block>
+            </Block>
             <Block display="flex">{renderChevron()}</Block>
         </BaseInfoContainer>
     {isOpen && 

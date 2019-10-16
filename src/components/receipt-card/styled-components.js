@@ -37,3 +37,8 @@ export const DetailsContainer = styled('div', props => ({
 export const SectionContainer = styled('div', props => ({
     marginBottom: props.$theme.sizing.scale200
 }))
+
+export const ReceiptAmountContainer = styled('div', props => ({
+    fontWeight: '600',
+    marginRight: props.$theme.sizing.scale400
+}))
