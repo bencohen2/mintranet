@@ -17,6 +17,7 @@ const SideNav = (props) => {
     if (item.itemId === location.pathname) {
       return true;
     }
+    
     // default page "/" should highlight Programs
     if (location.pathname === "/" && item.itemId === RoutePaths.Programs) {
       return true;
@@ -27,6 +28,10 @@ const SideNav = (props) => {
     }
     // new receipt page should highlight Receipts
     if (location.pathname === RoutePaths.NewReceipt && item.itemId === RoutePaths.Receipts) {
+      return true;
+    }
+    // apply for grants page should highlight Grants
+    if (location.pathname.includes(RoutePaths.MakeApplyForGrant('')) && item.itemId === RoutePaths.Grants)  {
       return true;
     }
     return false;

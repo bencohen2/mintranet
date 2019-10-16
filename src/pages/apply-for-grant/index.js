@@ -20,9 +20,9 @@ export const ApplyForGrant = (props) => {
     const grant = GrantsList.find(grant => grant.id === grantID);
     return  (
     <PageContainer>
-        <PageTitle>Apply for {grant.name}</PageTitle>
+        <PageTitle>Apply for {grant.name} Grant</PageTitle>
         <Form>
-        <Block marginTop="scale600">Moishe House Israeli Culture grants are generously supported by:</Block>
+        <Block marginTop="scale600">The {grant.name} Grant is generously supported by:</Block>
         <Block>- Aaron and Rebecca Weitman</Block>
         <Block marginBottom="scale600">- Young Judaea, the leading pluralistic Zionist Jewish youth movement in North America</Block>
         <FormControl label="Program Name" >
