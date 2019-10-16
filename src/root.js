@@ -40,7 +40,7 @@ const root = (
             <Route exact path={RoutePaths.NewProgram} component={Pages.NewProgram} />
             <Route exact path={RoutePaths.Receipts} component={Pages.Receipts} />
             <Route exact path={RoutePaths.NewReceipt} component={Pages.NewReceipt} />
-            <Route exact path={RoutePaths.Budget} component={Pages.Home} />
+            <Route exact path={RoutePaths.Budget} component={Pages.Budget} />
             <Route exact path={RoutePaths.Contacts} component={Pages.Home} />
             <Route exact path={RoutePaths.Grants} component={Pages.Grants} />
             <Route exact path={RoutePaths.Resources} component={Pages.Home} />

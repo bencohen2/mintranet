@@ -7,6 +7,7 @@ import NewReceipt from './new-receipt';
 import Receipts from './receipts';
 import Grants from './grants';
 import ApplyForGrant from './apply-for-grant';
+import Budget from './budget';
 
 export {
     Home,
@@ -16,5 +17,6 @@ export {
     NewReceipt,
     Receipts,
     Grants,
-    ApplyForGrant
+    ApplyForGrant,
+    Budget
 };
