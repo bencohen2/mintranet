@@ -19,11 +19,11 @@ export const items = [
       itemId: RoutePaths.Grants
     },
     {
+      title: 'Resource list',
+      itemId: RoutePaths.Resources
+    },
+    {
       title: 'Contact list',
       itemId: RoutePaths.Contacts
     },
-    {
-      title: 'Resource list',
-      itemId: RoutePaths.Resources
-    }
   ];

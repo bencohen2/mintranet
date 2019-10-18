@@ -50,11 +50,6 @@ const createOverrides = (value, onClose, placeholder: string) => ({
     Input: {
         props: {
             overrides: {
-                Root: {
-                    style: {
-                        width: '300px'
-                    }
-                },
                 After: {
                     component: () => {
                         return value.length > 0 ? <Block display="flex" alignItems="center" marginRight="scale500">

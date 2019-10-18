@@ -15,7 +15,7 @@ export const Toolbar = (props: Props) => {
     const {deleteProgram, program} = props;
     return <ToolbarContainer>
         {program.submittedReceipts && 
-            <ToolbarButtonContainer><Button kind={KIND.secondary}>View receipt</Button></ToolbarButtonContainer>
+            <ToolbarButtonContainer><Button kind={KIND.secondary}>View receipts</Button></ToolbarButtonContainer>
         }
         <ToolbarButtonContainer><Button kind={KIND.secondary}>Edit program</Button></ToolbarButtonContainer>
         <ToolbarButtonContainer><Button onClick={() => deleteProgram(program.uuid)} kind={KIND.secondary}>Delete program</Button></ToolbarButtonContainer>
