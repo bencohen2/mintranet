@@ -1,6 +1,6 @@
 // @flow
 import {createPlugin, createToken} from 'fusion-core';
-import {Program1, Program2, Program3, Program4, Program5} from '../../mocks/program';
+import {MockPrograms} from '../../mocks/program';
 
 // $FlowFixMe
 export const ProgramsClientToken = createToken('ProgramsClient');
@@ -12,7 +12,7 @@ const programsClientPlugin = createPlugin({
         return {
             getPrograms(args, ctx) {
                 return {
-                    programs: [Program1, Program2, Program3, Program4, Program5]
+                    programs: MockPrograms
                 };
             }
         }

@@ -11,6 +11,9 @@ import {Button} from 'baseui/button';
 import {Options, CheckboxOverride} from './util';
 import {connect} from 'formik';
 import {Form} from '../shared/styled-components';
+import {ResidentSelectOptions} from '../../mocks/residents';
+import {Textarea} from 'baseui/textarea';
+import SuppliesSection from './supplies';
 
 type Props = {};
 
@@ -21,7 +24,7 @@ export const NewProgramForm = (props: Props) => {
     return ( 
     <Form onSubmit={handleSubmit}>
         <FormControl label="Program Name" error={errors.programName}>
-            <Input 
+            <Input
                 name="programName"
                 id="programName"
                 placeholder="Enter a program name" 
@@ -31,11 +34,7 @@ export const NewProgramForm = (props: Props) => {
                 error={errors.programName}
             />
         </FormControl>
-        <FormControl 
-            label="Program Date" 
-            caption="Programs cannot be applied for more than 3 months in advance."
-            error={errors.programDate}
-        >
+        <FormControl label="Program Date" caption="Programs cannot be applied for more than 3 months in advance." error={errors.programDate}>
             <Datepicker 
                 name="programDate"
                 id="programDate"
@@ -53,7 +52,7 @@ export const NewProgramForm = (props: Props) => {
             <Select 
                 name="programType"
                 id="programType"
-                placeholder="Select"
+                placeholder="Select a program type"
                 options={Options}
                 value={values.programType}
                 onChange={({value}) => {
@@ -64,17 +63,55 @@ export const NewProgramForm = (props: Props) => {
                 error={errors.programType}
             />
         </FormControl>
+        <FormControl label="Program Location" error={errors.programName} caption="Optional - for resident use only">
+            <Input
+                name="programLocation"
+                id="programLocation"
+                placeholder="Where will the event take place?" 
+                value={values.programLocation}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.programLocation}
+            />
+        </FormControl>
         <FormControl label="Description" error={errors.description}>
-            <Input 
+            <Textarea 
                 name="description"
                 id="description"
-                placeholder="Enter a program description"
+                placeholder="Enter a program description" 
                 value={values.description}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 error={errors.description}
             />
         </FormControl>
+        <FormControl label="Program Leader" error={errors.programType} caption="Optional - for resident use only">
+            <Select 
+                name="programLeader"
+                id="programLeader"
+                placeholder="Who's in charge of the event?"
+                options={ResidentSelectOptions}
+                value={values.programLeader}
+                onChange={({value}) => {
+                    setFieldValue("programLeader", ResidentSelectOptions.find(o => o.id === value[0].id));
+                    handleChange();
+                }}
+                onBlur={handleBlur}
+                error={errors.programType}
+            />
+        </FormControl>
+        <FormControl label="Program Budget" caption="Optional - for resident use only">
+            <Input 
+                    name="budget"
+                    id="budget"
+                    placeholder="What is the program's proposed budget?" 
+                    value={values.budget}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    type="number" 
+                />
+        </FormControl>
+        <SuppliesSection values={values} handleChange={handleChange} handleBlur={handleBlur} />
         <Checkbox 
             name="is4HQProgram"
             id="is4HQProgram"

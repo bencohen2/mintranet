@@ -8,6 +8,7 @@ import {BudgetOptions, Fields} from './util';
 import FileUploader from './file-uploader';
 import {Form} from '../shared/styled-components';
 import {connect} from 'formik';
+import {ProgramSelectOptions} from '../../mocks/program';
 
 export const NewReceiptForm = (props) => {
     const {
@@ -16,12 +17,16 @@ export const NewReceiptForm = (props) => {
     return (
     <Form onSubmit={handleFormikSubmit}>
         <FormControl label="Program Name" error={errors.programName}>
-            <Input 
+            <Select 
                 name="programName"
                 id="programName"
-                placeholder="Enter a program name" 
+                placeholder="Select a program" 
                 value={values.programName}
-                onChange={handleChange}
+                options={ProgramSelectOptions}
+                onChange={({value}) => {
+                    setFieldValue("programName", ProgramSelectOptions.find(o => o.id === value[0].id));
+                    handleChange();
+                }}
                 onBlur={handleBlur}
                 error={errors.programName}
             />
@@ -30,6 +35,7 @@ export const NewReceiptForm = (props) => {
             <Select 
                 options={BudgetOptions}
                 error={errors.budget}
+                placeholder="Select a budget"
             />
         </FormControl>
         <FormControl label="Amount" error={errors.amount}>

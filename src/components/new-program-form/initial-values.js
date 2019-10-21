@@ -4,10 +4,16 @@ export const getInitialValues = () => {
     return {
         programName: '',
         programDate: '',
-        programType: '',
+        programLocation: '',
+        programType: undefined,
         description: '',
         is4HQProgram: false,
+        item0: {
+            name: '',
+            budget: ''
+        },
         isShabbatProgram: false,
+        programLeader: undefined,
         isPartnershipProgram: false,
         totalAttendees: undefined,
         residentAttendees: undefined,

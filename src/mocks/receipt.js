@@ -16,6 +16,19 @@ export const Receipt1: ReceiptType = {
 };
 
 export const Receipt2: ReceiptType = {
+    uuid: 1,
+    programName: 'Techina Making Event',
+    budget: 'House Budget',
+    amount: 60.00,
+    description: 'Other things',
+    submitter: 'Ben Cohen',
+    purchaser: 'Ben Cohen',
+    createdAt: '2019-09-16',
+    approved: false,
+    submittedPhotos: false,
+};
+
+export const Receipt3: ReceiptType = {
     uuid: 2,
     programName: 'Downtown Minyan',
     budget: 'EPF Budget',
@@ -28,7 +41,7 @@ export const Receipt2: ReceiptType = {
     submittedPhotos: true,
 };
 
-export const Receipt3: ReceiptType = {
+export const Receipt4: ReceiptType = {
     uuid: 3,
     programName: 'Shabbat Dinner',
     budget: 'Shabbat EPF',
@@ -41,7 +54,7 @@ export const Receipt3: ReceiptType = {
     submittedPhotos: true,
 };
 
-export const Receipt4: ReceiptType = {
+export const Receipt5: ReceiptType = {
     uuid: 4,
     programName: 'Rooftop Happy Hour',
     budget: 'Chagim Grants',
@@ -54,7 +67,20 @@ export const Receipt4: ReceiptType = {
     submittedPhotos: true,
 };
 
-export const Receipt5: ReceiptType = {
+export const Receipt6: ReceiptType = {
+    uuid: 4,
+    programName: 'Rooftop Happy Hour',
+    budget: 'Chagim Grants',
+    amount: 29.57,
+    description: 'Wine and some non-alcoholic beverages',
+    submitter: 'Ben Cohen',
+    purchaser: 'Philip Trencher',
+    createdAt: '2019-09-05',
+    approved: false,
+    submittedPhotos: true,
+};
+
+export const Receipt7: ReceiptType = {
     uuid: 5,
     programName: 'Hookah on the Roof',
     budget: 'Tikkun Olan Justice Grants',

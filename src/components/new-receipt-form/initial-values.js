@@ -2,7 +2,7 @@
 
 export const getInitialValues = () => {
     return {
-        programName: '',
+        programName: undefined,
         budget: '',
         amount: '',
         description: '',

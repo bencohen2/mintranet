@@ -2,7 +2,7 @@
 import React from 'react';
 import {ProgramType} from '../../types';
 import {Block} from 'baseui/block';
-import {DetailDisplayContainer, DetailsContainer} from './styled-components';
+import {DetailDisplayContainer, DetailsContainer, ReceiptContainer} from './styled-components';
 import {StyledCheck, StyledDelete} from '../shared/styled-components';
 import {styled} from 'baseui';
 
@@ -12,11 +12,21 @@ type Props = {
 
 export const Details = (props: Props) => {
     const {program} = props;
-    return <DetailsContainer>
-        <FieldDisplay name="Description" value={program.description} />
-        <BooleanDisplay name="Photos" value={program.submittedPhotos}/>
-        <BooleanDisplay name="Receipts" value={program.submittedReceipts}/>
-    </DetailsContainer>;
+    return (
+        <DetailsContainer>
+            <FieldDisplay name="Description" value={program.description} />
+            <Block display="flex">
+                <Block marginRight="auto">
+                    <BooleanDisplay name="Photos" value={program.submittedPhotos}/>
+                    <BooleanDisplay name="Receipts" value={program.submittedReceipts}/>
+                </Block>
+                <ReceiptContainer>
+                    <FieldDisplay name="Submitted receipt total" value={`$${program.submittedReceiptTotal}`} />
+                    <FieldDisplay name="Approved receipt total" value={`$${program.acceptedReceiptTotal}`} />
+                </ReceiptContainer>
+            </Block>
+        </DetailsContainer>
+    );
 };
 
 type FieldDisplayProps = {
@@ -35,7 +45,7 @@ type BooleanDisplayProps = {
 const BooleanDisplayContainer = styled('div', props => ({
     color: props.$value ? props.$theme.colors.mono1000 : props.$theme.colors.negative
 }));
-const BooleanDisplay = ({name, value}: BooleanDisplayProps) => {
+export const BooleanDisplay = ({name, value}: BooleanDisplayProps) => {
     const renderName = () => {
         if (value) {
             return `${name} submitted.`

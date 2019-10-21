@@ -7,6 +7,8 @@ export type ProgramType = {
     description: string,
     submittedPhotos: boolean,
     submittedReceipts: boolean,
+    submittedReceiptTotal: number,
+    acceptedReceiptTotal: number
 };
 
 export type ReceiptType = {
@@ -20,4 +22,9 @@ export type ReceiptType = {
     purchaser: string,
     approved: boolean,
     submittedPhotos: boolean
+}
+
+export type ResidentType = {
+    uuid: string,
+    name: string
 }

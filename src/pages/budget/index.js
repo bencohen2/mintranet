@@ -1,15 +1,11 @@
 // @flow
 import React from 'react';
-import {compose} from 'redux';
-import {withRouter} from 'fusion-plugin-react-router';
 import {PageContainer, PageTitle} from '../../components/shared/styled-components';
 import {Block} from 'baseui/block';
 import {ValueContainer, UnusedBudgetContainer, SubmittedReceiptsBudgetContainer} from './styled-components';
-import {RoutePaths} from '../../constants';
-import {Button} from 'baseui/button';
+import {NewProgramButton, NewReceiptButton} from '../../components/shared/new-button';
 
 export const Budget = (props) => {
-    const {history} = props;
     return  (
     <PageContainer>
         <PageTitle>Budget</PageTitle>
@@ -28,9 +24,9 @@ export const Budget = (props) => {
             </UnusedBudgetContainer>
             <Block display="flex" justifyContent="center" marginTop="scale500">
                 <Block marginRight="scale300">
-                    <Button onClick={() => history.push(RoutePaths.NewProgram)}>New program</Button>
+                    <NewProgramButton text="New program" />
                 </Block>
-                <Button onClick={() => history.push(RoutePaths.NewReceipt)}>New receipt</Button>
+                <NewReceiptButton text="New receipt" />
             </Block>
     </PageContainer>
     )
@@ -55,8 +51,4 @@ const IndentedField = (props: Props) => {
     return <Block marginLeft="scale800"><Field isIndented={true} {...props}/></Block>
 }
 
-const withBudget = compose(
-    withRouter,
-)
-
-export default withBudget(Budget);
+export default Budget;
