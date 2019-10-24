@@ -31,4 +31,16 @@ export const CheckboxOverride = {
             cursor: 'pointer'
         }
     }
-}
+};
+
+export const OtherHouseOptions = [
+    {id: '1', label: 'Hoboken'},
+    {id: '2', label: 'NYC – Harlem'},
+    {id: '3', label: 'NYC – Murray Hill'},
+    {id: '4', label: 'NYC – Park Slope'},
+    {id: '5', label: 'NYC – Queens LIC'},
+    {id: '6', label: 'NYC – RSJ'},
+    {id: '7', label: 'NYC – Upper East Side'},
+    {id: '8', label: 'NYC – Upper West Side'},
+    {id: '10', label: 'NYC – Williamsburg'},
+];

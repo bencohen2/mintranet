@@ -8,10 +8,7 @@ export const getInitialValues = () => {
         programType: undefined,
         description: '',
         is4HQProgram: false,
-        item0: {
-            name: '',
-            budget: ''
-        },
+        partnershipHouse: undefined,
         isShabbatProgram: false,
         programLeader: undefined,
         isPartnershipProgram: false,

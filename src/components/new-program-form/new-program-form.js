@@ -8,7 +8,7 @@ import {Select} from 'baseui/select';
 import {Checkbox, STYLE_TYPE} from 'baseui/checkbox';
 import {AttendeesInputContainer} from './styled-components';
 import {Button} from 'baseui/button';
-import {Options, CheckboxOverride} from './util';
+import {Options, CheckboxOverride, OtherHouseOptions} from './util';
 import {connect} from 'formik';
 import {Form} from '../shared/styled-components';
 import {ResidentSelectOptions} from '../../mocks/residents';
@@ -143,6 +143,23 @@ export const NewProgramForm = (props: Props) => {
         >
             Is this a partnership prgoram?
         </Checkbox>
+        {values.isPartnershipProgram && 
+        <FormControl label="If the partnership is with another Moishe House, please indicate which one below:">
+            <Select 
+             name="partnershipHouse"
+             id="partnershipHouse"
+             placeholder="Select a Moishe House"
+             options={OtherHouseOptions}
+             value={values.partnershipHouse}
+             onChange={({value}) => {
+                 setFieldValue("partnershipHouse", OtherHouseOptions.find(o => o.id === value[0].id));
+                 handleChange();
+             }}
+             onBlur={handleBlur}
+             error={errors.programType}
+             />
+        </FormControl>
+        }
         <FormControl label="Total attendees" error={errors.totalAttendees}>
             <AttendeesInputContainer>
                 <Input 
