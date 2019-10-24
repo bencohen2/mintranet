@@ -1,56 +1,77 @@
 // @flow
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Button} from 'baseui/button';
 import {FormControl} from 'baseui/form-control';
 import {Input} from 'baseui/input';
 import {Block} from 'baseui/block';
+import Plus from 'baseui/icon/plus';
+
+type SupplyType = {
+    name: string,
+    budget: string
+}
 
 type SingleSupplyProps = {
     index: number,
-    value: number,
-    handleChange: any,
-    handleBlur: any,
+    supply: SupplyType,
+    setSupplies: any => void,
+    supplies: SupplyType[]
 }
-const SingleSupply = ({index, value, handleChange, handleBlur}: SingleSupplyProps) => {
+const SingleSupply = (props: SingleSupplyProps) => {
+    const [supply, setSupply] = useState(props.supply);
+    const {supplies, index, setSupplies} = props;
+    useEffect(() => {
+        supplies[index] = supply;
+        setSupplies(supplies);
+    }, [supply])
     return (
         <Block display="flex">
-            <Block marginRight="scale300">
+            <Block display="flex" width="80%">
+            <Block marginRight="scale300" flex="1">
                 <Input
-                    name={`item${index}.name`}
-                    id={`item${index}.name`}
                     placeholder="Item" 
-                    value={value.name}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
+                    value={supply.name}
+                    onChange={({target: {value}}) => setSupply({
+                        ...supply,
+                        name: value
+                    })}
                 />
             </Block>
-            <Block>
-            <Input
-                name={`item-${index}.budget`}
-                id={`item-${index}.budget`}
-                placeholder="Amount" 
-                value={value.budget}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                type="number"
-            />
+            <Block flex="1" >
+                <Input
+                    placeholder="Amount" 
+                    value={supply.budget}
+                    type="number"
+                    onChange={({target: {value}}) => setSupply({
+                        ...supply,
+                        budget: value
+                    })}
+                />
             </Block>
+            </Block>
+            {index + 1 === supplies.length && 
+            <Block marginLeft="auto">
+                <Button onClick={() => {
+                    setSupplies([...supplies, {name: '', budget: ''}])
+                }}>
+                <Plus size={25}/>
+            </Button>
+            </Block>
+            }
         </Block>
     )
 }
 
-type SuppliesSectionProps = {
-    values: any,
-    handleChange: any,
-    handleBlur: any,
-}
+type SuppliesSectionProps = {};
 const SuppliesSection = (props: SuppliesSectionProps) => {
-    const {values, ...rest} = props;
-    const itemsValuesKeys = Object.keys(values).filter(key => key.includes('item'));
+    const [supplies, setSupplies] = useState([{
+        name: '',
+        budget: ''
+    }]);
     return <FormControl label="Program supplies" caption="Optional - for resident use only">
         <>
-            {itemsValuesKeys.map((key, index) => {
-                return <SingleSupply index={index} value={props.values[key]} {...rest} />
+            {supplies.map((supply, index) => {
+                return <SingleSupply key={index} index={index} supply={supply} setSupplies={setSupplies} supplies={supplies}/>
             })}
         </>
     </FormControl>

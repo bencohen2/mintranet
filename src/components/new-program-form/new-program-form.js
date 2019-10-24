@@ -63,7 +63,7 @@ export const NewProgramForm = (props: Props) => {
                 error={errors.programType}
             />
         </FormControl>
-        <FormControl label="Program Location" error={errors.programName} caption="Optional - for resident use only">
+        <FormControl label="Program Location"  caption="Optional - for resident use only">
             <Input
                 name="programLocation"
                 id="programLocation"
@@ -85,7 +85,7 @@ export const NewProgramForm = (props: Props) => {
                 error={errors.description}
             />
         </FormControl>
-        <FormControl label="Program Leader" error={errors.programType} caption="Optional - for resident use only">
+        <FormControl label="Program Leader"  caption="Optional - for resident use only">
             <Select 
                 name="programLeader"
                 id="programLeader"
@@ -97,7 +97,6 @@ export const NewProgramForm = (props: Props) => {
                     handleChange();
                 }}
                 onBlur={handleBlur}
-                error={errors.programType}
             />
         </FormControl>
         <FormControl label="Program Budget" caption="Optional - for resident use only">
@@ -111,7 +110,7 @@ export const NewProgramForm = (props: Props) => {
                     type="number" 
                 />
         </FormControl>
-        <SuppliesSection values={values} handleChange={handleChange} handleBlur={handleBlur} />
+        <SuppliesSection />
         <Checkbox 
             name="is4HQProgram"
             id="is4HQProgram"
@@ -156,7 +155,6 @@ export const NewProgramForm = (props: Props) => {
                  handleChange();
              }}
              onBlur={handleBlur}
-             error={errors.programType}
              />
         </FormControl>
         }
