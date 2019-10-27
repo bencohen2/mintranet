@@ -45,6 +45,7 @@ const root = (
             <Route exact path={RoutePaths.Grants} component={Pages.Grants} />
             <Route exact path={RoutePaths.Resources} component={Pages.Resources} />
             <Route path={RoutePaths.ApplyForGrant} component={Pages.ApplyForGrant} />
+            <Route exact path={RoutePaths.ResidentForum} component={Pages.ResidentForum} />
             <Route component={Pages.PageNotFound} />
           </Switch>
         </Content>

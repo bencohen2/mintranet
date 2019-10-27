@@ -28,3 +28,13 @@ export type ResidentType = {
     uuid: string,
     name: string
 }
+
+export type ThreadType = {
+    content: string,
+    title?: string,
+    createdAt: string,
+    createdByName: string,
+    createdByHouseName: string,
+    upvotes: number,
+    responses: ThreadType[]
+}

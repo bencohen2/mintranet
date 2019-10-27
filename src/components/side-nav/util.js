@@ -26,4 +26,8 @@ export const items = [
       title: 'Contact list',
       itemId: RoutePaths.Contacts
     },
+    {
+      title: 'Resident Forum',
+      itemId: RoutePaths.ResidentForum
+    }
   ];

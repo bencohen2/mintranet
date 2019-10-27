@@ -9,6 +9,7 @@ import Grants from './grants';
 import ApplyForGrant from './apply-for-grant';
 import Budget from './budget';
 import Resources from './resources';
+import ResidentForum from './resident-forum';
 
 export {
     Home,
@@ -20,5 +21,6 @@ export {
     Grants,
     ApplyForGrant,
     Budget,
-    Resources
+    Resources,
+    ResidentForum
 };

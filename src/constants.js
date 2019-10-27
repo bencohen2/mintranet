@@ -14,7 +14,8 @@ export const RoutePaths = {
     Grants: '/grants',
     ApplyForGrant: '/apply-for-grant/:grantID',
     MakeApplyForGrant: grantID => `/apply-for-grant/${grantID}`,
-    Resources: '/resources'
+    Resources: '/resources',
+    ResidentForum: '/resident-forum'
 };
 
 export const RpcIds = {
