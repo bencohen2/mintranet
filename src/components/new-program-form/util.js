@@ -34,7 +34,7 @@ export const CheckboxOverride = {
 };
 
 export const OtherHouseOptions = [
-    {id: '1', label: 'Hoboken'},
+    {id: '1', label: 'NYC - Hoboken'},
     {id: '2', label: 'NYC – Harlem'},
     {id: '3', label: 'NYC – Murray Hill'},
     {id: '4', label: 'NYC – Park Slope'},

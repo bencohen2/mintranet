@@ -140,7 +140,7 @@ export const NewProgramForm = (props: Props) => {
             onChange={handleChange}
             onBlur={handleBlur}
         >
-            Is this a partnership prgoram?
+            Is this a partnership program?
         </Checkbox>
         {values.isPartnershipProgram && 
         <FormControl label="If the partnership is with another Moishe House, please indicate which one below:">

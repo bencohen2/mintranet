@@ -46,6 +46,7 @@ const SingleSupply = (props: SingleSupplyProps) => {
                         ...supply,
                         budget: value
                     })}
+                    startEnhancer="$"
                 />
             </Block>
             </Block>
